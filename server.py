@@ -2,6 +2,8 @@ import threading
 from http.server import ThreadingHTTPServer
 from http.server import SimpleHTTPRequestHandler
 import cgi
+import serial
+from serial import Serial
 
 key_lock = threading.Lock()
 votes = []
@@ -42,7 +44,16 @@ class MyHttpRequestHandler(SimpleHTTPRequestHandler):
                 last_name = fields.get('last_name')
                 sex = fields.get('sex')
                 working = fields.get('working')
-                print(first_name[0], last_name[0], sex[0], working[0])
+
+                send_data = f'{first_name[0]}/{last_name[0]}/{sex[0]}/{working[0]}/$'
+                print(send_data)
+
+                Serial.baudrate = 115200
+                Serial.port = 'COM14'
+                Serial.open()
+                Serial.write(bytes(send_data))
+                Serial.close()
+
                 voter = {first_name[0], last_name[0], sex[0], working[0]}
                 votes.append(voter)
                 f = open("vote_db", "a")
