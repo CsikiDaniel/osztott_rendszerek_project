@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Voting System</title>
+		<meta charset="utf-8">
+        <link rel="stylesheet" href="welcome/welcomestyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+		
+	</head>
+    <body >
+        <section class="header">
+            <nav>
+                <a href="/welcome"><img src="images/logotextp1.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="/welcome">KEZDŐLAP</i></a></li>
+                        <li><a href="/welcome/vote">SZAVAZZ MOST!</a></li>
+                        <li><a href="">EDDIGI SZAVAZATOK</a></li>
+                        <li><a href="">RÓLUNK</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars"onclick="showMenu()"></i>
+            </nav>
+            <div class="text-box">
+                <h1>Szavazz egy jobb jövőért!</h1>
+                <p>Kattintson az alábbi linkre, hogy megkezdje a szavazást.</p>
+                <a href="welcome/vote" class="hero-btn">SZAVAZÁS INDÍTÁSA</a>
+            </div>
+
+        </section>
+
+        <section class="miertjo">
+
+            <h1>Miért jó szavazni?</h1>
+            <p>Mert demokrácia van.</p>
+
+            <div class="row">
+                <div class="miertjo-col">
+                    <h3>#1</h3>
+                    <p>Voting is a method for a group, such as a meeting or an electorate, in order to make a collective decision or express an opinion usually following discussions, debates or election campaigns. Democracies elect holders of high office by voting.</p>
+                </div>
+                <div class="miertjo-col">
+                    <h3>#2</h3>
+                    <p>Residents of a place represented by an elected official are called "constituents", and those constituents who cast a ballot for their chosen candidate are called "voters".</p>
+                </div>
+                <div class="miertjo-col">
+                    <h3>#3</h3>
+                    <p>There are different systems for collecting votes, but while many of the systems used in decision-making can also be used as electoral systems, any which cater for proportional representation can only be used in elections.</p>
+                </div>
+            </div>
+
+        </section>
+
+<!------JavaScript for Toggle Menu------>
+<script>
+    var navLinks = document.getElementById("navLinks");
+
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }
+
+</script>
+
+    </body>
+</html>

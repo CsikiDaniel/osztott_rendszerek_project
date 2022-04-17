@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Voting system</title>
+		<meta charset="utf-8">
+        
+		<link rel="stylesheet" href="votestyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	</head>
+    <body style="
+			min-height: 100vh;
+			width: 100%;
+			background-image: linear-gradient(rgba(255,0,0,0.25) 0%,
+			rgba(20,20,20,0.7) 33%,rgba(20,20,20,0.7) 66%,
+			rgb(0,100,0,0.25) 100%),url(images/banner.png);
+			background-position: center;
+			background-size: cover;
+			position: relative;
+			">
+        <section class="header">
+            <nav>
+                <a href="/welcome"><img src="images/logotextp1.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="/welcome">KEZDŐLAP</i></a></li>
+                        <li><a href="/welcome/vote">SZAVAZZ MOST!</a></li>
+                        <li><a href="">EDDIGI SZAVAZATOK</a></li>
+                        <li><a href="">RÓLUNK</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars"onclick="showMenu()"></i>
+            </nav>
+
+            <div class="vote">
+                <div class="title">Szavazás</div>
+                <form method="post" enctype="multipart/form-data" action="/welcome/vote">
+                    <div class="user-details">
+                        <div class="input-box">
+                            <span class="details">Keresztnév</span>
+                            <input name="first_name" type="text" id="first_name" placeholder="Írja be a keresztnevét" required>
+                        </div>
+                        <div class="input-box">
+                            <span class="details">Vezetéknév</span>
+                            <input name="last_name" type="text" id="last_name" placeholder="Írja be a vezetéknevét" required>
+                        </div>
+                        <div class="select-box">
+                            <span class="details">Neme</span>
+                            <select name="sex" id="sex" style="height:45px" required>
+                                <option value="man">Férfi</option>
+                                <option value="woman">Nő</option>
+                            </select>
+                        </div>
+                        <div class="check-box">
+                            <span class="details">Dolgozik?</span>
+                            <input type="checkbox" name="working" id="working" value="1">
+                            <input type="hidden" name="working" value="0">
+
+                        </div>
+                    </div>
+                    <div class="button">
+                        <input type="submit" value="Elküld">
+                    </div>
+                    
+                </form>
+            </div>
+        </section>
+
+                    <!------JavaScript for Toggle Menu------>
+        <script>
+            var navLinks = document.getElementById("navLinks");
+
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+
+        </script>
+
+    </body>
+</html>
